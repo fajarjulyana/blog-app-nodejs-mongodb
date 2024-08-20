@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - <%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/admin">Home</a></li>
+                <li><a href="/admin/new-post">Create New Post</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <%- body %> <!-- Tempatkan konten dinamis di sini -->
+    </main>
+    <footer>
+        <p>© 2024 My Blog - Admin Panel</p>
+    </footer>
+</body>
+</html>

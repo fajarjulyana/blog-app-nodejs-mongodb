@@ -1,0 +1,23 @@
+<h2>Edit Post</h2>
+<form action="/admin/edit/<%= post._id %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= post.title %>" required>
+    <label for="content">Content:</label>
+    <div id="editor-container"><%- post.content %></div> <!-- Quill editor container -->
+    <input type="hidden" id="content" name="content"> <!-- Hidden field to store content -->
+    <button type="submit">Update Post</button>
+</form>
+
+<!-- Quill JS -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script>
+    var quill = new Quill('#editor-container', {
+        theme: 'snow'
+    });
+
+    document.querySelector('form').onsubmit = function() {
+        var content = document.querySelector('#editor-container .ql-editor').innerHTML;
+        document.querySelector('#content').value = content;
+    };
+</script>

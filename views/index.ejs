@@ -1,0 +1,11 @@
+<h2>Welcome to My Blog</h2>
+
+<!-- List posts here -->
+<ul>
+    <% posts.forEach(post => { %>
+        <li>
+            <h3><%= post.title %></h3>
+            <div><%- post.content %></div> <!-- Render HTML content -->
+        </li>
+    <% }) %>
+</ul>
